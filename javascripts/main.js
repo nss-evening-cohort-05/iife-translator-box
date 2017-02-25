@@ -1,32 +1,35 @@
-var Translator = (function(){
+var Translator = ()()
 var userInput = document.getElementById("inputLang");
-var translateButton = document.getElementById("translate");
-var languageChoice = document.getElementsByName("language").value;
-
-function selectedLanguage(){
-	console.log("test",languageChoice);
-	for (var i = 0; i < 4; i++) {
-		
-	}
-
-} 
+// var translateButton = document.getElementById("translate");
+var translatedText = document.getElementById("translation");
 
 
+function getRadioValue()
+{
+	var languageSelect = "";
+    for (var i = 0; i < document.getElementsByName('language').length; i++)
+    {
+        if (document.getElementsByName('language')[i].checked)
+        {
+           languageSelect = document.getElementsByName('language')[i].value;
+           // console.log(document.getElementsByName('language')[i].value);
+
+        }
+    }
+
+    switch (languageSelect) {
+    case 'french'
+        translatedText.innerHTML = Translator.transalteToFrench(userInput)
+        break;
+    case 'german'
+        translatedText.innerHTML = Translator.transalteToGerman(userInput)
+        break;
+    default:
+        translatedText.innerHTML = "need to select a language";
+    
+}
 
 
+document.getElementById("translate").addEventListener("click", getRadioValue);
 
-};
-)(Translator || {});
-
-translateButton.addEventListener("click", selectedLanguage);
-// function selectedLanguage() {
-// 	if (languageChoice === "spanish") {
-// 		translateToSpanish();
-// 	} else if (languageChoice === "french") {
-// 		translateToFrench();
-// 	} else if (languageChoice === "vietvaluese") {
-// 		translateToVietnamese();
-// 	} else if (languageChoice === "german") {
-// 		translateToGerman();
-// 	}
-// }
+ 
