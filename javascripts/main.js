@@ -1,6 +1,8 @@
-// var Translator = (function(){
-// var userInput = document.getElementById("inputLang");
+var Translator = ()()
+var userInput = document.getElementById("inputLang");
 // var translateButton = document.getElementById("translate");
+var translatedText = document.getElementById("translation");
+
 
 function getRadioValue()
 {
@@ -15,10 +17,19 @@ function getRadioValue()
         }
     }
 
-    if languageSelect == 'french'
-    	call french
+    switch (languageSelect) {
+    case 'french'
+        translatedText.innerHTML = Translator.transalteToFrench(userInput)
+        break;
+    case 'german'
+        translatedText.innerHTML = Translator.transalteToGerman(userInput)
+        break;
+    default:
+        translatedText.innerHTML = "need to select a language";
     
 }
 
+
 document.getElementById("translate").addEventListener("click", getRadioValue);
 
+ 
