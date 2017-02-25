@@ -1,6 +1,6 @@
-// var Translator = (function(){
-// var userInput = document.getElementById("inputLang");
-// var translateButton = document.getElementById("translate");
+var Translator = (function(){
+var userInput = document.getElementById("inputLang");
+var translateButton = document.getElementById("translate");
 
 function getRadioValue()
 {
@@ -17,6 +17,12 @@ function getRadioValue()
 
     if languageSelect == 'french'
     	call french
+    if languageSelect == 'spanish'
+    	call spanish
+    if languageSelect == 'german'
+    	call german
+    if languageSelect == 'vietnamese'
+    	call vietnamese
     
 }
 
