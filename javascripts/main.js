@@ -28,6 +28,9 @@ function getRadioValue()
     case "german":
         translatedText.innerHTML = Translator.transalteToGerman(userInput);
         break;
+    case "spanish":
+        translatedText.innerHTML = Translator.translateToSpanish(userInput); 
+        break;   
     default:
         translatedText.innerHTML = "need to select a language";
     }
