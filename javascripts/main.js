@@ -22,14 +22,14 @@ function getRadioValue()
 
 
     switch (languageSelect) {
-    case "vietvaluese":
-        translatedText.innerHTML = Translator.transalteToVietnamese(userInput);
+    case "vietnamese":
+        translatedText.innerHTML = Translator.translateToVietnamese(userInput);
         break;
     case "german":
-        translatedText.innerHTML = Translator.transalteToGerman(userInput);
+        translatedText.innerHTML = Translator.translateToGerman(userInput);
         break;
     default:
-        translatedText.innerHTML = "need to select a language";
+        translatedText.innerHTML = "Please select a language for translation";
     }
     
 }
