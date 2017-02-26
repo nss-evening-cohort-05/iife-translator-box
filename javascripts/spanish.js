@@ -23,8 +23,8 @@ var Translator = (function(oldTranslator){
 		"you":"usted", 
 		"family":"familia"};
 
-	oldTranslator.translateToSpanish = function(userInput) {
-		return spanishLexicon[userInput];
+	oldTranslator.translateToSpanish = function() {
+		return spanishLexicon[text];
 	}	
 
 	return oldTranslator;

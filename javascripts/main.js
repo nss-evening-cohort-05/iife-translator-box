@@ -1,14 +1,13 @@
 
-var Translator = (function(){
-	var language = "";
+	// var language = "";
 	
-})(Translator || {});
 
+
+	var userInput = document.getElementById("inputLang").value;
+	var translatedText = document.getElementById("translation");
 
 function getRadioValue()
 {
-	var userInput = document.getElementById("inputLang").value;
-	var translatedText = document.getElementById("translation");
 
 	var languageSelect = "";
     for (var i = 0; i < document.getElementsByName('language').length; i++)
@@ -19,8 +18,7 @@ function getRadioValue()
 
         }
     }
-
-
+console.log(Translator.translateToSpanish("merry", userInput));
     switch (languageSelect) {
     case "vietvaluese":
         translatedText.innerHTML = Translator.transalteToVietnamese(userInput);
