@@ -1,7 +1,41 @@
 var Translator = (function(){
-var userInput = document.getElementById("inputLang");
-var translateButton = document.getElementById("translate");
+    var language = "";
+    
+})(Translator || {});
 
-translateButton.addEventListener("click",functionname);
-};
-)(Translator || {});
+
+
+function getRadioValue()
+{
+    var userInput = document.getElementById("inputLang").value;
+    var translatedText = document.getElementById("translation");
+
+    var languageSelect = "";
+    for (var i = 0; i < document.getElementsByName('language').length; i++)
+    {
+        if (document.getElementsByName('language')[i].checked)
+        {
+           languageSelect = document.getElementsByName('language')[i].value;
+
+        }
+    }
+
+
+    switch (languageSelect) {
+    case 'french':
+        translatedText.innerHTML = Translator.setlexicon(userInput);
+        break;
+    case "vietvaluese":
+        translatedText.innerHTML = Translator.transalteToVietnamese(userInput);
+        break;
+    case "german":
+        translatedText.innerHTML = Translator.changeToGerman(userInput);
+        break;
+    default:
+        translatedText.innerHTML = "need to select a language";
+    }
+    
+}
+
+
+document.getElementById("translate").addEventListener("click", getRadioValue);
