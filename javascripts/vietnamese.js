@@ -1,20 +1,23 @@
 var Translator = (function(oldTranslator){
 
 	
-	var newText = {"cat": "xxx","dog": "yyy"}; 
-	var newText = {"merry": "joyeux", "christmas": "Noël", "seasons": "saisons", "greetings": "salutations", "happy": "content", "hannukah": "Hanoucca", "tis": "C'est", "the": "la", "holiday": "vacances", "holidays": "vacances", "kwanzaa": "kwanzaa", "peace": "paix", "joy": "joie", "on": ""
-        // earth:
-        // world:
-        // love:
-        // hope:
-        // wishing:
-        // you:
-        // family:
-        // and:
+	var newText = {"merry": "vui ve", "christmas": "Giang sinh", "seasons": "cac mua", 
+	"greetings": "loi chao hoi", "happy": "vui mung", "Hanukkah": "Hanukkah", "tis": "tis", "the": "cac", "holiday": "ngay le", "holidays": "ngay le", "kwanzaa": "kwanzaa", "peace": "hoa binh", "joy": "vui suong", "on": "tren",
+        "earth": "trai dat",
+        "world": "the gioi",
+        "love": "yeu",
+        "hope": "mong",
+        "wishing": "co nhu cau",
+        "you": "ban" ,
+        "family": "gia dinh",
+        "and": "va"
     };
 	
-	oldTranslator.transalteToVietnamese = function(text){
-		return newText[text];
+	oldTranslator.translateToVietnamese = function(text){
+		if (typeof(newText[text]) == "undefined")
+			return "Not matched for translation "
+		else
+			return newText[text];
 	}
 
 	return oldTranslator;
