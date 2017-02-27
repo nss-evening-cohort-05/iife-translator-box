@@ -1,8 +1,5 @@
 var Translator = (function(){
 	var language = "";
-	
-})(Translator || {});
-
 
 
 function getRadioValue()
@@ -13,6 +10,7 @@ function getRadioValue()
 
 	var languageSelect = "";
 
+
     for (var i = 0; i < document.getElementsByName('language').length; i++)
     {
         if (document.getElementsByName('language')[i].checked)
@@ -21,8 +19,6 @@ function getRadioValue()
 
         }
     }
-
-
     switch (languageSelect) {
     case 'french':
         translatedText.innerHTML = Translator.setlexicon(userInput);
@@ -34,6 +30,9 @@ function getRadioValue()
         translatedText.innerHTML = Translator.transalteToGerman(userInput);
 
         break;
+    case "spanish":
+        translatedText.innerHTML = Translator.translateToSpanish(userInput); 
+        break;   
     default:
         translatedText.innerHTML = "need to select a language";
     }
