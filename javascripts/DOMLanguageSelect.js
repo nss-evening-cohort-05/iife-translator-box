@@ -1,18 +1,9 @@
-var Translator = (function(){
-	var language = "";
-	
-})(Translator || {});
-
-
-
 function getRadioValue()
 {
-
 	var userInput = document.getElementById("inputLang").value;
 	var translatedText = document.getElementById("translation");
 
 	var languageSelect = "";
-
     for (var i = 0; i < document.getElementsByName('language').length; i++)
     {
         if (document.getElementsByName('language')[i].checked)
@@ -24,22 +15,16 @@ function getRadioValue()
 
 
     switch (languageSelect) {
-    case 'french':
-        translatedText.innerHTML = Translator.setlexicon(userInput);
-        break;
     case "vietnamese":
-        translatedText.innerHTML = Translator.transalteToVietnamese(userInput);
+        translatedText.innerHTML = Translator.translateToVietnamese(userInput);
         break;
     case "german":
-        translatedText.innerHTML = Translator.transalteToGerman(userInput);
-
+        translatedText.innerHTML = Translator.translateToGerman(userInput);
         break;
     default:
-        translatedText.innerHTML = "need to select a language";
+        translatedText.innerHTML = "Please select a language for translation";
     }
     
 }
 
-
 document.getElementById("translate").addEventListener("click", getRadioValue);
-
