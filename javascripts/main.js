@@ -1,19 +1,16 @@
+var Translator = (function(){
+	var language = "";
 
-	// var language = "";
-	
-
-
-	var userInput = document.getElementById("inputLang").value;
-    userInput.addEventListener("click", logThis)
-function logThis(){
-    console.log(userInput);
-}
-    var translatedText = document.getElementById("translation");
 
 function getRadioValue()
 {
 
-    var languageSelect = "";
+	var userInput = document.getElementById("inputLang").value;
+	var translatedText = document.getElementById("translation");
+
+	var languageSelect = "";
+
+
     for (var i = 0; i < document.getElementsByName('language').length; i++)
     {
         if (document.getElementsByName('language')[i].checked)
@@ -23,11 +20,15 @@ function getRadioValue()
         }
     }
     switch (languageSelect) {
-    case "vietvaluese":
+    case 'french':
+        translatedText.innerHTML = Translator.setlexicon(userInput);
+        break;
+    case "vietnamese":
         translatedText.innerHTML = Translator.transalteToVietnamese(userInput);
         break;
     case "german":
         translatedText.innerHTML = Translator.transalteToGerman(userInput);
+
         break;
     case "spanish":
         translatedText.innerHTML = Translator.translateToSpanish(userInput); 
@@ -39,7 +40,5 @@ function getRadioValue()
 }
 
 
-
 document.getElementById("translate").addEventListener("click", getRadioValue);
 
- 
