@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Language Translater</title>
+	<title>Language Translator</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<input type="text" value="userInput" id="inputLang">
-		<fieldset>
+	<h1>Holiday Card Translator</h1>
+	<input type="text" value="Enter your text here..." id="inputLang" size="120">
+		<fieldset class="language">
 			<input type="radio" value="spanish" name="language">
-			<label for="spanish">Translate to Spanish</label>
+			<label for="spanish">Translate to Spanish</label><br>
 			<input type="radio" value="french" name="language">
-			<label for="french">Translate to French</label>
-
+			<label for="french">Translate to French</label><br>
 			<input type="radio" value="vietnamese" name="language">
-			<label for="vietnamese">Translate to Vietnamese</label>
-
+			<label for="vietnamese">Translate to Vietnamese</label><br>
 			<input type="radio" value="german" name="language">
 			<label for="german">Translate to German</label>
 		</fieldset>
 	<div>
-		<button id="translate">Translate</button>
+		<button class="btn" id="translate">Translate</button>
 	</div>
-	<div>
-		<textarea id="translation" readonly="readonly">
+	<div id="responseholder">
+		<textarea id="translation" readonly="readonly" rows="4" cols="50">
 		Translation
 		</textarea>
 	</div>
   <script type="text/javascript" src="./javascripts/main.js"></script>
+  <!-- <script type="text/javascript" src="javascripts/spanish.js"></script> -->
   <script type="text/javascript" src="./javascripts/german.js"></script>
-  <script src="javascripts/french.js"></script>
+  <script type="text/javascript" src="javascripts/french.js"></script>
 	<script type="text/javascript" src="./javascripts/vietnamese.js"></script>
 	<script type="text/javascript" src="./javascripts/DOMLanguageSelect.js"></script>
 	</body>
