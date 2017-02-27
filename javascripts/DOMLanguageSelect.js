@@ -15,6 +15,9 @@ function getRadioValue()
 
 
     switch (languageSelect) {
+    case "spanish":
+        translatedText.innerHTML = Translator.translateToSpanish(userInput);
+        break;
     case "french":
         translatedText.innerHTML = Translator.setlexicon(userInput);
         break;
