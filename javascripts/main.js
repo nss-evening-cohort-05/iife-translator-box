@@ -7,10 +7,12 @@ var Translator = (function(){
 
 function getRadioValue()
 {
+
 	var userInput = document.getElementById("inputLang").value;
 	var translatedText = document.getElementById("translation");
 
 	var languageSelect = "";
+
     for (var i = 0; i < document.getElementsByName('language').length; i++)
     {
         if (document.getElementsByName('language')[i].checked)
@@ -30,6 +32,7 @@ function getRadioValue()
         break;
     case "german":
         translatedText.innerHTML = Translator.transalteToGerman(userInput);
+
         break;
     default:
         translatedText.innerHTML = "need to select a language";
@@ -40,4 +43,3 @@ function getRadioValue()
 
 document.getElementById("translate").addEventListener("click", getRadioValue);
 
- 
