@@ -4,12 +4,16 @@
 
 
 	var userInput = document.getElementById("inputLang").value;
-	var translatedText = document.getElementById("translation");
+    userInput.addEventListener("click", logThis)
+function logThis(){
+    console.log(userInput);
+}
+    var translatedText = document.getElementById("translation");
 
 function getRadioValue()
 {
 
-	var languageSelect = "";
+    var languageSelect = "";
     for (var i = 0; i < document.getElementsByName('language').length; i++)
     {
         if (document.getElementsByName('language')[i].checked)
@@ -18,7 +22,6 @@ function getRadioValue()
 
         }
     }
-console.log(Translator.translateToSpanish("merry", userInput));
     switch (languageSelect) {
     case "vietvaluese":
         translatedText.innerHTML = Translator.transalteToVietnamese(userInput);
