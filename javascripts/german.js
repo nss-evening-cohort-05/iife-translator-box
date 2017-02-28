@@ -23,7 +23,7 @@ var Translator = (function (oldTranslator){
 	"family": "familie"};
  
  
- 	oldTranslator.changeToGerman = function(translateToGerman){
+ 	oldTranslator.translateToGerman = function(translateToGerman){
         return lexicon[translateToGerman];
     };
 
