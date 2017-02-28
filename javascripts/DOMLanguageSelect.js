@@ -2,6 +2,7 @@ function getRadioValue()
 {
     var userInput = document.getElementById("inputLang").value;
     var translatedText = document.getElementById("translation");
+    translatedText.innerHTML = " ";
 
     var languageSelect = "";
     for (var i = 0; i < document.getElementsByName('language').length; i++)
