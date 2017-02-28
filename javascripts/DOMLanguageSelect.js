@@ -1,9 +1,9 @@
 function getRadioValue()
 {
-	var userInput = document.getElementById("inputLang").value;
-	var translatedText = document.getElementById("translation");
+    var userInput = document.getElementById("inputLang").value;
+    var translatedText = document.getElementById("translation");
 
-	var languageSelect = "";
+    var languageSelect = "";
     for (var i = 0; i < document.getElementsByName('language').length; i++)
     {
         if (document.getElementsByName('language')[i].checked)
@@ -13,23 +13,34 @@ function getRadioValue()
         }
     }
 
+    var words = userInput.split (" ");
 
+    for (var i=0; i<words.length; i++)
+    {
+        translateWord(languageSelect, words[i]);
+    }
+
+    function  translateWord (languageSelect , userWord) {
     switch (languageSelect) {
     case "spanish":
-        translatedText.innerHTML = Translator.translateToSpanish(userInput);
+        translatedText.innerHTML += Translator.translateToSpanish(userWord) + " ";
         break;
     case "french":
-        translatedText.innerHTML = Translator.setlexicon(userInput);
+        translatedText.innerHTML += Translator.translateToFrench(userWord) + " ";
+
+        
+
         break;
     case "vietnamese":
-        translatedText.innerHTML = Translator.translateToVietnamese(userInput);
+        translatedText.innerHTML += Translator.translateToVietnamese(userWord) + " ";
         break;
     case "german":
-        translatedText.innerHTML = Translator.translateToGerman(userInput);
+        translatedText.innerHTML += Translator.translateToGerman(userWord) + " ";
         break;
     default:
-        translatedText.innerHTML = "Please select a language for translation";
+        translatedText.innerHTML += "Please select a language for translation";
     }
+}
     
 }
 
