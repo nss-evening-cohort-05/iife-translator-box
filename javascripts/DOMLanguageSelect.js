@@ -19,7 +19,7 @@ function getRadioValue()
         translatedText.innerHTML = Translator.translateToSpanish(userInput);
         break;
     case "french":
-        translatedText.innerHTML = Translator.setlexicon(userInput);
+        translatedText.innerHTML = Translator.translateToFrench(userInput);
         break;
     case "vietnamese":
         translatedText.innerHTML = Translator.translateToVietnamese(userInput);
