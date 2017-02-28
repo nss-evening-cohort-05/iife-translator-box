@@ -7,7 +7,7 @@ var Translator = (function (oldTranslator) {
 		// 		return lexicon;
 		// },
 	
-	oldTranslator.setlexicon = function(translateToFrench){
+	oldTranslator.translateToFrench = function(translateToFrench){
 		return lexicon[translateToFrench];
 	}
 
